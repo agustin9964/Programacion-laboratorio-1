@@ -27,82 +27,51 @@ d) La edad y la nota de la primera mujer ingresada o informar si no hubo ninguna
    int edadPrimerMujer;
    int notaPrimerMujer;
 
-
-
-
    for(i=0;i<5;i++)
    {
-
-
-       printf("Ingrese la nota del alumno: ");
-
-       scanf("%d",&notas);
-       while(notas<0||notas>10)
+        printf("Ingrese la nota del alumno: ");
+        scanf("%d",&notas);
+        while(notas<0||notas>10)
        {
            printf("Error!! Ingrese la nota del alumno: ");
-
             scanf("%d",&notas);
-
        }
        printf("Ingrese el sexo del alumno, f si es mujer, m si es hombre: ");
-
        fflush(stdin);
-
-       scanf("%c",& sexo);
+       scanf("%c",&sexo);
        sexo=tolower(sexo);
-
-
-       while(sexo!='m'&&sexo!='f')
+       while(sexo!='m' && sexo!='f')
        {
             printf("Ingrese el sexo del alumno, f si es mujer, m si es hombre: ");
-
             fflush(stdin);
-
-            scanf("%c",& sexo);
-
+            scanf("%c",&sexo);
             sexo=tolower(sexo);
-
        }
-
-
         printf("Ingrese la edad del alumno: ");
         scanf("%d", &edad);
         while(edad<0||edad>100)
         {
             printf("Ingrese la edad del alumno: ");
             scanf("%d", &edad);
-
         }
 
         acumulador=acumulador+notas;
 
        if(i==0)
-       {
+        {
            notaBaja=notas;
-
-
-
-       }
+            notaMinimo=notas;
+            sexoMinimo=sexo;
+            edadMinimo=edad;
+        }
        else
         {
             if(notas<notaBaja)
             {
                 notaBaja=notas;
                 sexoBajo=sexo;
-
             }
-
-        }
-
-        if(i==0)
-        {
-            notaMinimo=notas;
-            sexoMinimo=sexo;
-            edadMinimo=edad;
-        }
-        else
-        {
-            if(edad<edadMinimo)
+             if(edad<edadMinimo)
             {
                 edadMinimo=edad;
                 sexoMinimo=sexo;
@@ -110,21 +79,21 @@ d) La edad y la nota de la primera mujer ingresada o informar si no hubo ninguna
             }
 
         }
-        if(sexo=='m'&edad>=18&&notas>=6)
+
+
+        if(sexo=='m'&& edad>=18 && notas>=6)
         {
             contVaronesMas18++;
         }
-        if(sexo=='f'&&contadorMujer==0)
+        if(sexo=='f' && contadorMujer==0)
         {
             edadPrimerMujer=edad;
             notaPrimerMujer=notas;
             contadorMujer++;
         }
-
-
    }
 
-  promedio=(float)acumulador/5;
+  promedio=(float)(acumulador/5);
 
     printf("\n El promedio de notas es de :%f ",promedio);
     printf("\n La nota mas baja es: %d y el sexo de esa persona es de :%c",notaBaja,sexoBajo);
@@ -136,9 +105,9 @@ d) La edad y la nota de la primera mujer ingresada o informar si no hubo ninguna
         printf("\n No hubo mujeres ingresadas");
     }
     else
-        {
-            printf("\n La edad de la primer mujer es de :%d y su nota fue :%d ",edadPrimerMujer,notaPrimerMujer);
-        }
+    {
+        printf("\n La edad de la primer mujer es de :%d y su nota fue :%d ",edadPrimerMujer,notaPrimerMujer);
+    }
 
 
 
