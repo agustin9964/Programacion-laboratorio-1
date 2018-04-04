@@ -1,19 +1,29 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <ctype.h>
+
 #define CANT 5
-//SE PUEDE CAMBIAR EL VALOR DE DEFINE CANT
 
-void main(void)
-{
-    int v[CANT],i;
-    for (i=0;i<CANT;i++)
-    {
-        printf("Ingrese valor a cargar en el vector: ");
+void main(void){
+    int v[CANT], pos, i;
+    char seguir;
 
-        scanf("%d",&v[i]);
-    }
     for(i=0;i<CANT;i++)
-    {
-        printf("\n%d",v[i]);
+        v[i]=0; // inicializamos vector
+
+    do{
+        printf("Ingrese posici¢n");
+        scanf("%d",&pos);
+
+        printf("Ingrese valor a cargar en el vector");
+        scanf("%d",&v[pos]);
+
+        printf("Desea ingresar otro dato S/N?");
+        setbuf(stdin, NULL);
+        scanf("%c",&seguir);
+        seguir = tolower(seguir);
+    }while(seguir == 's');
+
+    for(i=0; i<CANT; i++){
+        printf("\n%d", v[i]);
     }
 }
