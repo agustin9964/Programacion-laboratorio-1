@@ -4,26 +4,44 @@
 #define CANT 5
 
 void main(void){
-    int v[CANT], pos, i;
+    int v[CANT], estado[CANT], i, contador=0;
     char seguir;
 
     for(i=0;i<CANT;i++)
-        v[i]=0; // inicializamos vector
+        estado[i]=0; // inicializamos vector
 
     do{
-        printf("Ingrese posici¢n");
-        scanf("%d",&pos);
+        if(contador < CANT){
+            for(i=0; i<CANT; i++){
+                if(estado[i] == 0){
+                    printf("Ingrese valor a cargar en el vector");
+                    scanf("%d",&v[i]);
 
-        printf("Ingrese valor a cargar en el vector");
-        scanf("%d",&v[pos]);
+                    estado[i]=1;
+                    contador++;
+                    break;
+                }
+            }
+        }
+        else{
+            printf("No hay espacio suficiente...");
+        }
 
         printf("Desea ingresar otro dato S/N?");
         setbuf(stdin, NULL);
         scanf("%c",&seguir);
-        seguir = tolower(seguir);
+        seguir=tolower(seguir);
     }while(seguir == 's');
 
-    for(i=0; i<CANT; i++){
-        printf("\n%d", v[i]);
+    if(contador > 0){
+        for(i=0; i<CANT; i++){
+            if(estado[i] == 1){
+                printf("\n%d", v[i]);
+            }
+        }
     }
+    else{
+        printf("No existen datos cargados...");
+    }
+
 }
