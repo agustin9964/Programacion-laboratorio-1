@@ -1,27 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define CANT 5
+//SE PUEDE CAMBIAR EL VALOR DE DEFINE CANT
 
-int main()
+void main(void)
 {
-    int legajo[CANT],edad[CANT],i;
-    float sueldo [CANT];
-
-    for (i=0; i<CANT; i++)
+    int v[CANT],i;
+    for (i=0;i<CANT;i++)
     {
-        legajo[i]=i+1;
+        printf("Ingrese valor a cargar en el vector: ");
 
-        printf("\nEdad: ");
-        scanf("%d", &edad[i]);
-
-        printf("\nSueldo: ");
-        scanf("%f", &sueldo[i]);
-
+        scanf("%d",&v[i]);
     }
-    printf("\nLegajo\tEdad\tSueldo");
-    for (i=0; i<CANT; i++)
+    for(i=0;i<CANT;i++)
     {
-        printf("\n%d\t%d\t%f",legajo[i],edad[i],sueldo[i]);
+        printf("\n%d",v[i]);
     }
-    return 0;
 }
