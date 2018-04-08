@@ -1,62 +1,47 @@
-#include<stdio.h>
-int sumar(int a, int b)
+float suma(float a, float b)
 {
-    int resultado;
+    float resultado;
     resultado=a+b;
     return resultado;
 }
-int restar(int a, int b)
+float resta(float a, float b)
 {
-    int resultado;
+    float resultado;
     resultado=a-b;
     return resultado;
 }
-float dividir (float a, float b)
+float division(float a, float b)
 {
     float resultado;
     resultado=a/b;
     return resultado;
 }
-int multiplicar(int a , int b)
+float multiplicacion(float a, float b)
 {
-    int resultado;
+    float resultado;
     resultado=a*b;
     return resultado;
 }
-/*int factorial(int a)
+
+int factorial(float a)
 {
-    int i;
+    int AuxiliarA=(int)a;
     int resultado=1;
     if(a<0)
-    {
-        printf("Error ");
-    }
-
-    else{
-        for(i=1;i<a;i++)
-        resultado=resultado*i;
-        return resultado;
-    }
-
-
-}*/
-int factorial(int a)
-{
-    int i;
-    int resultado=1;
-
-    if(a<0)
-    {
-        printf("Error");
-    }
+    printf("No se puede hacer factorial de un numero negativo\n");
+     else if(a!=AuxiliarA)
+    printf("No se puede hacer el factorial de un numero decimal\n");
     else
     {
-        for(i=1;i<=a;i++)
+        for(int i=1; i<=(int)a; i++)
         {
-            resultado= resultado * i;
-
+            resultado *= i;
         }
-          return resultado;
+        printf("El factorial de A es: %d \n ",resultado);
     }
 
+
+
 }
+
+

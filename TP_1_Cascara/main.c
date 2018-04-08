@@ -6,15 +6,13 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    int numeroA=0;
-    int numeroB=0;
-    int resultado;
-    float resultadoDivision;
+    float numeroA=0;
+    float numeroB=0;
 
     while(seguir=='s')
     {
-        printf("1- Ingresar 1er operando (A=x)\n");
-        printf("2- Ingresar 2do operando (B=y)\n");
+        printf("1- Ingresar 1er operando (A=%2.f)\n",numeroA);
+        printf("2- Ingresar 2do operando (B=%2.f)\n",numeroB);
         printf("3- Calcular la suma (A+B)\n");
         printf("4- Calcular la resta (A-B)\n");
         printf("5- Calcular la division (A/B)\n");
@@ -29,64 +27,76 @@ int main()
         {
             case 1:
                 printf("Ingrese el numero A : ");
-                scanf("%d", &numeroA);
-               system("pause");
+                scanf("%f", &numeroA);
                 system("cls");
                 break;
             case 2:
                 printf("Ingrese el numero B : ");
-                scanf("%d", &numeroB);
-                system("pause");
+                scanf("%f", &numeroB);
                 system("cls");
                 break;
             case 3:
-                resultado=sumar(numeroA, numeroB);
-                printf("Suma : %d \n",resultado);
+                suma(numeroA,numeroB);
+                printf("Suma : %2.f \n",suma(numeroA,numeroB));
                 system("pause");
                 system("cls");
                 break;
             case 4:
-                resultado=restar(numeroA, numeroB);
-                printf("Resta : %d \n",resultado);
+                resta(numeroA,numeroB);
+                printf("Resta : %2.f \n",resta(numeroA,numeroB));
                 system("pause");
                 system("cls");
                 break;
             case 5:
-                resultadoDivision= dividir(numeroA, numeroB);
+                division(numeroA,numeroB);
                 if(numeroB==0)
                 {
-                    printf("Error\n");
+                    printf("Error!\n");
                     system("pause");
-                    system("cls");
+                    system ("cls");
                 }
                 else
                 {
-                    printf("Division : %f \n",resultadoDivision);
+                    division(numeroA,numeroB);
+                    printf("Division : %f \n",division(numeroA,numeroB));
                     system("pause");
                     system("cls");
                 }
                 break;
             case 6:
-                resultado=multiplicar(numeroA, numeroB);
-                printf("Multiplicacion: %d \n",resultado);
+                multiplicacion(numeroA,numeroB);
+                printf("Multiplicacion : %2.f \n",multiplicacion(numeroA,numeroB));
                 system("pause");
                 system("cls");
                 break;
             case 7:
-                resultado=factorial(numeroA);
-                printf("Factorial : %d \n",resultado);
+                factorial(numeroA);
                 system("pause");
                 system("cls");
                 break;
             case 8:
+                suma(numeroA,numeroB);
+                printf("Suma : %2.f \n",suma(numeroA,numeroB));
+                resta(numeroA,numeroB);
+                printf("Resta : %2.f \n",resta(numeroA,numeroB));
+                division(numeroA,numeroB);
+                 if(numeroB==0)
+                    printf("Error!\n");
+                else
+                {
+                    division(numeroA,numeroB);
+                    printf("Division : %f \n",division(numeroA,numeroB));
+                }
+                multiplicacion(numeroA,numeroB);
+                printf("Multiplicacion : %2.f \n",multiplicacion(numeroA,numeroB));
+                factorial(numeroA);
+                system("pause");
+                system("cls");
                 break;
             case 9:
                 seguir = 'n';
                 break;
         }
-        printf("X= %d\n",numeroA);
-        printf("Y= %d\n",numeroB);
-
 
     }
     return 0;
