@@ -28,70 +28,47 @@ int main()
             case 1:
                 printf("Ingrese el numero A : ");
                 scanf("%f", &numeroA);
-                system("cls");
                 break;
             case 2:
                 printf("Ingrese el numero B : ");
                 scanf("%f", &numeroB);
-                system("cls");
                 break;
             case 3:
                 suma(numeroA,numeroB);
                 system("pause");
-                system("cls");
                 break;
             case 4:
                 resta(numeroA,numeroB);
                 system("pause");
-                system("cls");
                 break;
             case 5:
                 division(numeroA,numeroB);
-                if(numeroB==0)
-                {
-                    printf("Error!\n");
-                    system ("pause");
-                    system("cls");
-                }
-                else
-                {
-                    printf("Division : %f \n",division(numeroA,numeroB));
-                    system("pause");
-                    system("cls");
-                }
+                system("pause");
                 break;
             case 6:
                 multiplicacion(numeroA,numeroB);
                 system("pause");
-                system("cls");
                 break;
             case 7:
                 factorial(numeroA);
                 system("pause");
-                system("cls");
                 break;
             case 8:
                 suma(numeroA,numeroB);
                 resta(numeroA,numeroB);
                 division(numeroA,numeroB);
-                 if(numeroB==0)
-                    printf("Error!\n");
-                else
-                {
-                    division(numeroA,numeroB);
-                    printf("Division : %f \n",division(numeroA,numeroB));
-                }
                 multiplicacion(numeroA,numeroB);
                 factorial(numeroA);
                 system("pause");
-                system("cls");
                 break;
             case 9:
                 seguir = 'n';
                 break;
             default:
-                system("cls");
+                printf("Error, ingrese un numero mas bajo\n");
+                system("pause");
         }
+        system("cls");
     }
     return 0;
 }

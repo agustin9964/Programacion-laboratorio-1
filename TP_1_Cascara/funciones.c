@@ -16,7 +16,18 @@ float resta(float a, float b)
 float division(float a, float b)
 {
     float resultado;
-    resultado=a/b;
+
+    if(b==0)
+    {
+        printf("Error\n");
+
+    }
+    else
+    {
+        resultado=a/b;
+        printf("Division: %f\n",resultado);
+    }
+
     return resultado;
 
 }
@@ -33,9 +44,9 @@ int factorial(float a)
     int AuxiliarA=(int)a;
     int resultado=1;
     if(a<0)
-    printf("No se puede hacer factorial de un numero negativo\n");
+    printf("No se puede hacer factorial de un negativo\n");
      else if(a!=AuxiliarA)
-    printf("No se puede hacer el factorial de un numero decimal\n");
+    printf("No se puede hacer el factorial de  decimal\n");
     else
     {
         for(int i=1; i<=(int)a; i++)
