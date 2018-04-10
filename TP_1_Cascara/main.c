@@ -37,13 +37,11 @@ int main()
                 break;
             case 3:
                 suma(numeroA,numeroB);
-                printf("Suma : %2.f \n",suma(numeroA,numeroB));
                 system("pause");
                 system("cls");
                 break;
             case 4:
                 resta(numeroA,numeroB);
-                printf("Resta : %2.f \n",resta(numeroA,numeroB));
                 system("pause");
                 system("cls");
                 break;
@@ -52,12 +50,11 @@ int main()
                 if(numeroB==0)
                 {
                     printf("Error!\n");
-                    system("pause");
-                    system ("cls");
+                    system ("pause");
+                    system("cls");
                 }
                 else
                 {
-                    division(numeroA,numeroB);
                     printf("Division : %f \n",division(numeroA,numeroB));
                     system("pause");
                     system("cls");
@@ -65,7 +62,6 @@ int main()
                 break;
             case 6:
                 multiplicacion(numeroA,numeroB);
-                printf("Multiplicacion : %2.f \n",multiplicacion(numeroA,numeroB));
                 system("pause");
                 system("cls");
                 break;
@@ -76,9 +72,7 @@ int main()
                 break;
             case 8:
                 suma(numeroA,numeroB);
-                printf("Suma : %2.f \n",suma(numeroA,numeroB));
                 resta(numeroA,numeroB);
-                printf("Resta : %2.f \n",resta(numeroA,numeroB));
                 division(numeroA,numeroB);
                  if(numeroB==0)
                     printf("Error!\n");
@@ -88,7 +82,6 @@ int main()
                     printf("Division : %f \n",division(numeroA,numeroB));
                 }
                 multiplicacion(numeroA,numeroB);
-                printf("Multiplicacion : %2.f \n",multiplicacion(numeroA,numeroB));
                 factorial(numeroA);
                 system("pause");
                 system("cls");
@@ -96,8 +89,9 @@ int main()
             case 9:
                 seguir = 'n';
                 break;
+            default:
+                system("cls");
         }
-
     }
     return 0;
 }

@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1523176456 source:c:\users\gisel\desktop\tp_1_cascara\funciones.c
+1523321844 source:c:\users\gisel\desktop\tp_1_cascara\funciones.c
 
-1523177512 source:c:\users\gisel\desktop\tp_1_cascara\main.c
+1523321901 source:c:\users\gisel\desktop\tp_1_cascara\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
 
-1523176282 c:\users\gisel\desktop\tp_1_cascara\funciones.h
+1523273386 c:\users\gisel\desktop\tp_1_cascara\funciones.h
 

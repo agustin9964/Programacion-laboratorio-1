@@ -1,13 +1,16 @@
+
 float suma(float a, float b)
 {
     float resultado;
     resultado=a+b;
+    printf("Suma : %2.f \n",resultado);
     return resultado;
 }
 float resta(float a, float b)
 {
     float resultado;
     resultado=a-b;
+    printf("Resta : %2.f \n",resultado);
     return resultado;
 }
 float division(float a, float b)
@@ -15,11 +18,13 @@ float division(float a, float b)
     float resultado;
     resultado=a/b;
     return resultado;
+
 }
 float multiplicacion(float a, float b)
 {
     float resultado;
     resultado=a*b;
+    printf("Multiplicacion : %2.f \n",resultado);
     return resultado;
 }
 
@@ -37,11 +42,8 @@ int factorial(float a)
         {
             resultado *= i;
         }
-        printf("El factorial de A es: %d \n ",resultado);
+        printf("El factorial de A es: %d \n ", resultado);
     }
-
-
-
 }
 
 

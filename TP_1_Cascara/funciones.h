@@ -8,6 +8,4 @@ float division(float,float);
 int factorial(float a);
 
 
-
-
 #endif // FUNCIONES_H_INCLUDED
