@@ -1,42 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <conio.h>
-
-#define ESC 27
-#define CANT 31
-
+#define CANT 2
 int main()
 {
-    char nombre[CANT];
-    char aux[CANT * 10];
-    char letra;
-    int letras;
+    char nombre[CANT][31]; //matriz de caracteres. //el primer vector es la cantidad de nombres, el segundo la cantidad  de caracteres que puede tener cada nombre
+    int legajo [CANT];
+    float salario[CANT];
+    int i;
 
-    do{
+    for(i=0;i<CANT;i++)
+    {
         system("cls");
-        /* Linux
-        system("clear");
-        */
 
-        do{
-            printf("Nombre: ");
-            fflush(stdin);
-            //scanf("%s", nombre);
-            scanf("%[^\n]", aux);
-            letras = strlen(aux);
-        }while(letras >30);
+        printf("legajo : ");
+        scanf("%d", &legajo[i]);
+        printf("nombre : ");
+        fflush(stdin);
+        scanf("%s" ,nombre[i]);
+        //gets(nombre[i]);
 
-        printf("\nFuera de la validacion!");
-        strcpy(nombre, aux);
+        printf("salario : ");
+        scanf("%f", &salario[i]);
 
-        printf("\nEl nombre es: %s", nombre);
+    }
+    for(i=0;i<CANT;i++)
+    {
+        printf("\n%d\t%s\t\t\t%.2f", legajo[i], nombre[i], salario[i]);
+    }
 
-        printf("\n\nPresione cualquier tecla para continuar... ESC para salir");
 
-        letra = getch();
 
-    }while(letra != ESC);
+return 0;
 
-    return 0;
 }
