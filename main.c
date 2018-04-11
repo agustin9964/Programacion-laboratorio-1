@@ -1,31 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define ELEMENTOS 5
+#include <string.h>
+#include <conio.h>
+
+#define ESC 27
+#define CANT 31
 
 int main()
 {
-    int i,j;
-    char nombre[ELEMENTOS][50] = {"Pedro","Carlos","Juan","Ernesto","Mario"};
-    char apellido[ELEMENTOS][50]= {"Gomez","Fernandez","Paz","Perez","Lopez"};
-    char auxiliar[50];
-    for(i=0;i< ELEMENTOS-1;i++)
-    {
-        for(j=i+1;j<ELEMENTOS;j++)
-        {
-            if(strcmp(nombre[i],nombre[j])>0)
-            {
-                strcpy(auxiliar,nombre[i]);
-                strcpy(nombre[i],nombre[j]);
-                strcpy(nombre[j], auxiliar);
-                strcpy(auxiliar,apellido[i]);// para ordenar el apellido y que no se separe con el nombre
-                strcpy(apellido[i],apellido[j]);
-            }
-        }
-    }
-    printf("\n\nLista ordenada por nombres ");
-    for(i=0;i<ELEMENTOS;i++)
-    {
-        printf("\nNombre: %s - Apellido: %s",nombre[i],apellido[i]);
-    }
+    char nombre[CANT];
+    char aux[CANT * 10];
+    char letra;
+    int letras;
+
+    do{
+        system("cls");
+        /* Linux
+        system("clear");
+        */
+
+        do{
+            printf("Nombre: ");
+            fflush(stdin);
+            //scanf("%s", nombre);
+            scanf("%[^\n]", aux);
+            letras = strlen(aux);
+        }while(letras >30);
+
+        printf("\nFuera de la validacion!");
+        strcpy(nombre, aux);
+
+        printf("\nEl nombre es: %s", nombre);
+
+        printf("\n\nPresione cualquier tecla para continuar... ESC para salir");
+
+        letra = getch();
+
+    }while(letra != ESC);
+
     return 0;
 }
