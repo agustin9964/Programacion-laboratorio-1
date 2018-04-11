@@ -65,7 +65,7 @@ int main()
                 seguir = 'n';
                 break;
             default:
-                printf("Error, ingrese un numero mas bajo\n");
+                printf("Error,ingrese un numero del 1 al 9\n");
                 system("pause");
         }
         system("cls");
