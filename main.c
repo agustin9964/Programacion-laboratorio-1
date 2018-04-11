@@ -1,16 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "funcion.h"
+#define ELEMENTOS 5
 
 int main()
 {
-    int x[]={34,14,23,12,7};
-
-    ordenar (x,5,1);
-
-    mostrarVector (x,5);
-
+    int i,j;
+    char nombre[ELEMENTOS][50] = {"Pedro","Carlos","Juan","Ernesto","Mario"};
+    char apellido[ELEMENTOS][50]= {"Gomez","Fernandez","Paz","Perez","Lopez"};
+    char auxiliar[50];
+    for(i=0;i< ELEMENTOS-1;i++)
+    {
+        for(j=i+1;j<ELEMENTOS;j++)
+        {
+            if(strcmp(nombre[i],nombre[j])>0)
+            {
+                strcpy(auxiliar,nombre[i]);
+                strcpy(nombre[i],nombre[j]);
+                strcpy(nombre[j], auxiliar);
+                strcpy(auxiliar,apellido[i]);// para ordenar el apellido y que no se separe con el nombre
+                strcpy(apellido[i],apellido[j]);
+            }
+        }
+    }
+    printf("\n\nLista ordenada por nombres ");
+    for(i=0;i<ELEMENTOS;i++)
+    {
+        printf("\nNombre: %s - Apellido: %s",nombre[i],apellido[i]);
+    }
     return 0;
 }
-
-
