@@ -1,42 +1,61 @@
-void ordenar(int vec[],int tam,int criterio)
-{
-  int i,j,aux;
-  for(i=0;i<tam-1;i++)
-  {
-      for(j=i+1;j<tam;j++)
-      {
-          if(vec[i]>vec[j] &&criterio==0)
-          {
-            aux=vec[i];
-            vec[i]=vec[j];
-            vec[j]=aux;
-          }
-          if(vec[i]<vec[j] &&criterio==1)
-          {
-            aux=vec[i];
-            vec[i]=vec[j];
-            vec[j]=aux;
-          }
-      }
-  }
-}
-/** \brief ordena un vector de enteros de acuerdo al criterio
- *
- * \param vector que quiero ordenar
- * \param tamanio del vector
- * \param criterio de ordenamiento 0 para ascendente, 1 para descendente
- *
- */
+#include <string.h>
 
-
-void mostrarVector(int vec[],int tam)
+int buscarLibre(int id[],int t)
 {
-    int i;
-    for(i=0;i<tam;i++)
+  int index= -1; //sirve para buscar un espacio libre.
+  int i;
+    for(i=0;i<t;i++)
     {
-        printf("%d ", vec[i]);
+        if(id[i]==0)
+        {
+            index=i;
+            break;
+        }
     }
 
 
+  return index; // for(int i=0;i<)
+}
+void mostrarProductos (int idProducto[],char descripcion[][50],int stock[],float precioUnitario[],int cant)
+{
+    int i;
+    printf("%5s %20s %s\n", "id","descripcion","stock","precio");
+
+    for(i=0;i<cant;i++)
+            {
+                if(idProducto[i]!=0)
+                {
+                    printf("%5d %20s %5d %.2f\n",idProducto[i], descripcion[i],stock[i],precioUnitario[i]);
+                }
+            }
+}
+void ordenar (int idProducto[],char descripcion[][50],int stock[],float precioUnitario[],int cant)
+{
+    int auxInt;
+    float auxFloat;
+    char auxString[50];
+    int i;
+    int j;
+    for(i=0; i<cant-1; i++) //BURBUJEO
+    {
+        for(j=i+1;j<cant;j++)
+        {
+            if(strcmp(descripcion[i],descripcion[j])>0)
+            {
+                strcpy(auxString,descripcion[i]);
+                strcpy(descripcion[i],descripcion[j]);
+                strcpy(descripcion[j],auxString);
+
+                auxInt=idProducto[i];
+                idProducto[i]=idProducto[j];
+                idProducto[j]=auxInt;
+
+                auxFloat
+
+
+            }
+
+        }
+    }
 
 }
