@@ -1,35 +1,74 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
 
-//
-/*void funcion (int x[],int tam);
-void funcionDos (char int[][20],int filas); //se necesita pasar la cantidad de caracteres
-                                            //para que pueda cortar el vector en esa cantidad de caracteres*/
+typedef struct
+    {
+        char nombre[20];
+        int legajo;
+        float sueldo;
+        char sexo;
+    }eEmpleado;
 
-void miFuncion (char[][20],int);
+void mostrarEmpleado(eEmpleado);
+void mostrarEmpleados(eEmpleado[], int);
+void ordenarEmpleados(eEmpleado[],int);
+
 int main()
 {
-   char nombres [5][20]={"jUan CARLOS","aNa","RobErTo dENIS pErez","RoQuE sANTa CRUZ"};
-   miFuncion(nombres,5);
+    //eEmpleado unEmpleado;
+    eEmpleado plantel[] ={{"Juan",1111,1000.75,'m'},{"Ana",2222,2000.40,'f'},{"Luis",3333,3000.55,'m'}}; // HARDCODEO EN VECTORES
+    //eEmpleado otroEmpleado; se copio y se igualo otroEmpleado a unEmpleado
+    //otroEmpleado=unEmpleado;
 
+   /* unEmpleado.legajo=1234;
+    strcpy(unEmpleado.nombre,"Juan"); //se tiene que hacer un string copy para copiar una cadena.
+    unEmpleado.sueldo=50000.50;
+    unEmpleado.sexo='m';*/
+
+    /*printf("Nombre: \n");
+    gets(unEmpleado.nombre);
+    printf("Legajo: \n");
+    scanf("%d", &unEmpleado.legajo);
+    printf("Sueldo: %\n");
+    scanf("%2.f", &unEmpleado.sueldo);
+    printf("Sexo: \n");
+    fflush(stdin);
+    scanf("%c", &unEmpleado.sexo);*/ //Tipo larga, donde el usuario ingresa los datos
+
+    mostrarEmpleados(plantel, 3);
+    ordenarEmpleados(plantel, 3);
 
 }
-
-void miFuncion(char vec[][20],int filas) //como pasar una matriz como parametro, recorrerla por filas y mostrarla.
+void mostrarEmpleado(eEmpleado emp)
 {
-    for (int i=0;i<filas;i++)
+    printf("Nombre: %s\n", emp.nombre);
+    printf("Legajo: %d\n", emp.legajo);
+    printf("Sueldo: %.2f\n", emp.sueldo);
+    printf("Sexo: %c \n", emp.sexo);
+}
+void mostrarEmpleados(eEmpleado vec[], int tam)
+{
+    for(int i=0; i<tam ; i++)
     {
-        strlwr(vec[i]);
-        for (int k=0;k<20;k++)// esto sirve para que en caso de que haya un espacio, se ponga en mayusculas despues del espacio.
-        {
-            if(vec[i][k]==' ')
-            {
-                vec[i][k+1]=toupper(vec[i][k+1]);
-            }
-        }//para que haga plancha y sean todas minusculas en las filas de la matriz
-        vec[i][0]=toupper(vec[i][0]); //para que todos empiecen con mayuscula
-        printf("%s\n", vec[i]);
+        mostrarEmpleados(vec[i]);
     }
+}
+void ordenarEmpleados(eEmpleado vec[],int tam)
+{
+    eEmpleado aux;
+    for(int i=0; i<tam-1; i++)
+    {
+        for (int j=i+1;j<tam;j++)
+        {
+            if(strcmp(vec[i].nombre, vec[j],nombre)>0)
+            {
+                aux= vec[i];
+                vec[i]=vec[j];
+                vec[j]=aux;
+            }
+        }
+    }
+
+
 }
