@@ -1,31 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct fecha{
+    int dia, mes, anio;
+};
+
+struct gente{
+    char nombre[81];
+    struct fecha f_nacimiento;
+};
+
 int main()
 {
-    char dato[15];
-    int datoInt, i, flag, cant;
+    struct gente persona;
 
-    printf("Ingrese el dato: ");
-    scanf("%s", dato);
+    printf("Nombre: ");
+    scanf("%[^\n]", persona.nombre);
 
-    flag = 0;
-    cant = strlen(dato);
+    printf("\n\nFecha de nacimiento");
+    printf("\nDia: ");
+    scanf("%d", &persona.f_nacimiento.dia);
 
-    for(i=0; i<cant; i++){
-        if(!isdigit(dato[i])){
-            flag = 1;
-            break;
-        }
-    }
+    printf("\nMes: ");
+    scanf("%d", &persona.f_nacimiento.mes);
 
-    if(flag == 1){
-        printf("\nNo es un numero");
+    printf("\nAño: ");
+    scanf("%d", &persona.f_nacimiento.anio);
 
-    }
-    else{
-        printf("\nEs un numero");
-    }
+    system("cls");
+    printf("%s nacio el %d/%d/%d", persona.nombre, persona.f_nacimiento.dia, persona.f_nacimiento.mes, persona.f_nacimiento.anio);
 
     return 0;
 }
