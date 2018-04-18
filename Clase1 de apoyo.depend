@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1523719675 source:c:\users\alumno\desktop\clase1 de apoyo\funcion.c
-
-1523719675 source:c:\users\alumno\desktop\clase1 de apoyo\main.c
-	<stdio.h>
-	<stdlib.h>
-	<conio.h>
-
